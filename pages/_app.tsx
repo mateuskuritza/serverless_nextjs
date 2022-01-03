@@ -1,8 +1,11 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import ThemeContainer from "../contexts/ThemeContainer";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }: { Component: React.FunctionComponent; pageProps: any }) {
+	return (
+		<ThemeContainer>
+			<Component {...pageProps} />
+		</ThemeContainer>
+	);
 }
 
-export default MyApp
+export default MyApp;
